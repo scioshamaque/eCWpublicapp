@@ -5,7 +5,7 @@ const router = express.Router();
 import { getEcwSmartEndpoints } from "../services/eCWMetaService.js";
 
 const CLIENTID=process.env.CLIENTID;
-const REDIRECTURL=process.env.REDIRECTURI;
+const REDIRECT_URI=process.env.REDIRECT_URI;
 const STATE_SECRET = "temp-sandbox-secret-change-later-123";
 
 router.get('/', async (req,res)=>{
@@ -41,7 +41,7 @@ router.get('/', async (req,res)=>{
     const params= new URLSearchParams({
         response_type:'Code',
         client_id:CLIENTID,
-        redirect_uri:REDIRECTURL,
+        redirect_uri:REDIRECT_URI,
         launch:launch,
         state:stateToken
         ,

@@ -5,7 +5,7 @@ import {exchangeCodeForToken} from "../services/eCWCodeService.js";
 import {getEcwSmartEndpoints} from "../services/eCWMetaService.js"
 const STATE_SECRET = "temp-sandbox-secret-change-later-123";
 const router = express.Router();
-
+const REDIRECT_URI = 'https://ecwpublicapp.onrender.com/callback';
 router.get('/', async (req,res)=>{
 
 try{
