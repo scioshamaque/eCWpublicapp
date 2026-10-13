@@ -4,7 +4,7 @@ import crypto from "crypto";
 const router = express.Router();
 import { getEcwSmartEndpoints } from "../services/eCWMetaService.js";
 
-const CLIENTID=process.env.CLIENTID;
+const CLIENT_ID=process.env.CLIENT_ID;
 const REDIRECT_URI=process.env.REDIRECT_URI;
 const STATE_SECRET = "temp-sandbox-secret-change-later-123";
 
@@ -39,13 +39,13 @@ router.get('/', async (req,res)=>{
 
 
     const params= new URLSearchParams({
-        response_type:'Code',
-        client_id:CLIENTID,
+        response_type:'code',
+        client_id:CLIENT_ID,
         redirect_uri:REDIRECT_URI,
         launch:launch,
         state:stateToken
         ,
-        scope:"launch openid fhirUser user/Patient.read patient/Patient.read",
+        scope:"launch openid fhirUser user/Patient.read",
         aud:iss,
         code_challenge:codeChallenge,
         code_challenge_method:'S256'
