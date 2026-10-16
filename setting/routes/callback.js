@@ -38,7 +38,7 @@ try{
 
     const {token_endpoint} = await getEcwSmartEndpoints(iss);
 
-    const accessTokenData = exchangeCodeForToken(code,token_endpoint,REDIRECT_URI,codeVerifier,CLIENT_ID);
+    const accessTokenData = await exchangeCodeForToken(code,token_endpoint,REDIRECT_URI,codeVerifier,CLIENT_ID);
 
     res.json(accessTokenData);
 
